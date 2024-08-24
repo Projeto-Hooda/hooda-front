@@ -217,25 +217,23 @@ function FormProduto() {
           </label>
           <select
             name="categoria"
+            id="categoria"
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            value={categoria.id}
-            onChange={(e: ChangeEvent<HTMLSelectElement>) => setCategoria(categorias.find(cat => cat.id === parseInt(e.target.value)) || categoria)}
-          >
-            <option value="" disabled>Selecione uma categoria</option>
+          
+            onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}>
+            <option value="" selected disabled>Selecione uma categoria</option>
             {categorias.map(cat => (
               <option key={cat.id} value={cat.id}>{cat.nome}</option>
             ))}
           </select>
         </div>
-        <div className="flex items-center justify-between">
-          <button
-            className="bg-[#FEAE04] hover:bg-[#e69c03] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="submit"
-          >
-            {id !== undefined ? 'Editar' : 'Cadastrar'}
+        <div className="flex items-center justify-evenly">
+          <button disabled={carregandoCategoria} type='submit'
+            className="bg-[#FEAE04] hover:bg-[#e69c03] w-1/2 mx-2 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            {carregandoCategoria ? <span>Carregando</span> : id !== undefined ? 'Editar' : 'Cadastrar'}
           </button>
-          <button
-            className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          <button 
+            className="bg-red-500 hover:bg-red-700 w-1/2 mx-2 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="button"
             onClick={retornar}
           >
