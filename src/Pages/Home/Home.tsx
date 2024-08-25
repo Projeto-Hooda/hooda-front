@@ -4,6 +4,7 @@ import Categoria from "../../model/Categoria";
 import { buscar } from "../../services/Service";
 import { Link } from "react-router-dom";
 import Carrosel from "../../Components/Carrosel/Carrosel";
+import MenuCategoria from "../../Components/MenuCategoria/MenuCategoria";
 
 function Home() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
@@ -17,31 +18,33 @@ function Home() {
   }, [categorias.length]);
 
   return (
-    <div className="grid grid-cols-12">
+    <div className="grid md:grid-cols-12">
       <div className="min-h-[0vh] max-h-[60vh] max-md:hidden pb-8 flex items-center col-span-12 p-0 m-0">
         <Carrosel />
       </div>
-      <div className="flex col-span-2 justify-end">
-        <button
+      <div className="flex flex-col md:flex-row md:col-span-2 md:justify-end">
+        {/* <button
           className="p-2 m-4 text-white bg-blue-500 rounded-lg md:hidden"
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         >
           {isSidebarOpen ? "Close Menu" : "Open Menu"}
-        </button>
+        </button> */}
+        <div className="m-2 w-[100vw] h-10">
+          <MenuCategoria />
+        </div>
 
         <aside
-          className={`m-4 w-[180px] h-[500px] rounded-md bg-amber-500 font-Montserrat text-white p-4 shadow-lg transition-transform ${
-            isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-          } md:translate-x-0 md:w-64`}
+          className={`max-lg:hidden md:flex-col m-4 w-[100vw] xl:w-[180px] md:h-[500px] rounded-md bg-amber-500 font-Montserrat text-white p-4 shadow-lg transition-transform md:translate-x-0 md:w-64`}
         >
-          <h2 className="text-2xl  border-b-2 flex justify-center font-semibold mb-4">
+          <h2 className="text-base md:text-2xl border-b-2 flex justify-center font-semibold mb-4">
             Categorias
           </h2>
-          <ul className="space-y-2">
+          <ul className="space-y-2 grid grid-cols-4 md:flex-col md:grid-cols-1">
             {categorias.map((categoria) => (
               <li
                 key={categoria.id}
-                className="p-2 rounded-lg hover:bg-gray-600"
+                categoria={categoria}
+                className="p-2 rounded-lg hover:bg-gray-600 text-xs text-center md:text-base md:text-start"
               >
                 <Link to={`/categorias/${categoria.id}`} className="block">
                   {categoria.nome}
@@ -51,9 +54,9 @@ function Home() {
           </ul>
         </aside>
       </div>
-      <div className="col-span-9 flex justify-center">
+      <div className="md:col-span-9 flex justify-center">
         <div>
-          <div className="flex flex-row flex-wrap justify-evenly py-0 px-0">
+          <div className="flex md:flex-row md:flex-wrap justify-evenly py-0 px-0">
             <ListProduto />
           </div>
           <p className="font-Docker-One text-hoodaLaranja flex justify-center">
