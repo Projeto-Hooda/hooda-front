@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faInfoCircle, faTag, faCube, faPlusCircle, faTimes, faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faInfoCircle, faTag, faCube, faPlusCircle, faTimes, faBars, faShoppingCart, faUser } from '@fortawesome/free-solid-svg-icons';
 
 function Menu() {
   const { usuario, handleLogout } = useContext(AuthContext);
@@ -78,18 +78,34 @@ function Menu() {
                     Produto
                   </Link>
                 </li>
-                <li className="relative">
-                  <button onClick={toggleDropdown} className="font-Montserrat text-gray-700 px-4 py-2 rounded hover:text-white flex items-center">
-                    <FontAwesomeIcon icon={faPlusCircle} className="h-6 w-6 mr-2" />
-                    Cadastro
-                  </button>
-                  {isDropdownOpen && (
-                    <div className="absolute right-0 mt-2 w-[7rem] bg-gray-100 border border-gray-300 rounded shadow-lg flex flex-col">
-                      <Link to="/cadastroCategoria" onClick={closeMenu} className="py-2 px-4 hover:bg-gray-200">Categoria</Link>
-                      <Link to="/cadastroProduto" onClick={closeMenu} className="py-2 px-4 hover:bg-gray-200">Produto</Link>
-                    </div>
-                  )}
-                </li>
+                {token && (
+                  <>
+                    <li className="relative">
+                      <button onClick={toggleDropdown} className="font-Montserrat text-gray-700 px-4 py-2 rounded hover:text-white flex items-center">
+                        <FontAwesomeIcon icon={faPlusCircle} className="h-6 w-6 mr-2" />
+                        Cadastro
+                      </button>
+                      {isDropdownOpen && (
+                        <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg z-50">
+                          <Link to="/cadastroCategoria" onClick={closeMenu} className="block py-2 px-4 text-gray-800 hover:bg-gray-200 rounded-t-lg flex items-center">
+                            <FontAwesomeIcon icon={faTag} className="h-5 w-5 mr-2" />
+                            Categoria
+                          </Link>
+                          <Link to="/cadastroProduto" onClick={closeMenu} className="block py-2 px-4 text-gray-800 hover:bg-gray-200 rounded-b-lg flex items-center">
+                            <FontAwesomeIcon icon={faCube} className="h-5 w-5 mr-2" />
+                            Produto
+                          </Link>
+                        </div>
+                      )}
+                    </li>
+                    <li>
+                      <Link to="/perfil" className="py-2 px-3 font-Montserrat text-gray-700 hover:text-white flex items-center">
+                        <FontAwesomeIcon icon={faUser} className="h-6 w-6 mr-2" />
+                        Perfil
+                      </Link>
+                    </li>
+                  </>
+                )}
               </ul>
             </div>
 
@@ -174,18 +190,34 @@ function Menu() {
                     Produto
                   </Link>
                 </li>
-                <li className="relative">
-                  <button onClick={() => { toggleDropdown(); closeMenu(); }} className="font-Montserrat text-gray-700 px-4 py-2 rounded hover:text-white flex items-center w-full text-left">
-                    <FontAwesomeIcon icon={faPlusCircle} className="h-6 w-6 mr-2" />
-                    Cadastro
-                  </button>
-                  {isDropdownOpen && (
-                    <div className="mt-2 w-full bg-gray-100 border border-gray-300 rounded shadow-lg flex flex-col">
-                      <Link to="/cadastroCategoria" onClick={closeMenu} className="py-2 px-4 hover:bg-gray-200">Categoria</Link>
-                      <Link to="/cadastroProduto" onClick={closeMenu} className="py-2 px-4 hover:bg-gray-200">Produto</Link>
-                    </div>
-                  )}
-                </li>
+                {token && (
+                  <>
+                    <li className="relative">
+                      <button onClick={toggleDropdown} className="font-Montserrat text-gray-700 px-4 py-2 rounded flex items-center w-full text-left">
+                        <FontAwesomeIcon icon={faPlusCircle} className="h-6 w-6 mr-2" />
+                        Cadastro
+                      </button>
+                      {isDropdownOpen && (
+                        <div className="mt-2 w-full bg-white border border-gray-300 rounded-lg shadow-lg z-50">
+                          <Link to="/cadastroCategoria" onClick={closeMenu} className="block py-2 px-4 text-gray-800 hover:bg-gray-200 rounded-t-lg flex items-center">
+                            <FontAwesomeIcon icon={faTag} className="h-5 w-5 mr-2" />
+                            Categoria
+                          </Link>
+                          <Link to="/cadastroProduto" onClick={closeMenu} className="block py-2 px-4 text-gray-800 hover:bg-gray-200 rounded-b-lg flex items-center">
+                            <FontAwesomeIcon icon={faCube} className="h-5 w-5 mr-2" />
+                            Produto
+                          </Link>
+                        </div>
+                      )}
+                    </li>
+                    <li>
+                      <Link to="/perfil" className="py-2 px-3 font-Montserrat text-gray-700 hover:text-white flex items-center">
+                        <FontAwesomeIcon icon={faUser} className="h-6 w-6 mr-2" />
+                        Perfil
+                      </Link>
+                    </li>
+                  </>
+                )}
               </ul>
             </div>
           </div>
