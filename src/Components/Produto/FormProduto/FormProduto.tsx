@@ -31,6 +31,7 @@ function FormProduto() {
     estoque: 0,
     imagem: '',
     preco: 0,
+    quantidade: 0,
     categoria: null,
     usuario: null,
   });
