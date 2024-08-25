@@ -17,7 +17,7 @@ function CardCarrinho({ item }: CardProdutosProps) {
 
         </div>
         <div className='p-4'>
-          <div className="mb-2 flex items-center justify-between text-xl">
+          <div className="mb-2 flex items-center justify-between text-md md:text-xl">
             <p className="text-hoodaLaranja font-medium">{item.nome}</p>
           </div>
           <div className="mb-2 flex items-center justify-between text-md">
@@ -29,6 +29,14 @@ function CardCarrinho({ item }: CardProdutosProps) {
 
           <p className="text-gray-600 text-sm font-normal opacity-75">
             Avaliação: {item.avaliacao}
+          </p>
+
+          <p className="text-gray-600 text-sm font-normal opacity-75">
+            Quantidade: {item.quantidade}
+          </p>
+
+          <p className="text-gray-600 text-sm font-normal opacity-75">
+            Subtotal: {item.quantidade * item.preco}
           </p>
 
         </div>

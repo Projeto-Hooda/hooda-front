@@ -72,19 +72,42 @@ export function AuthProvider({ children }: AuthProviderProps) {
         const quantidadeItems = items.length
     
         function adicionarProduto(produto: Produto) {
-            setItems(state => [...state, produto])
-        }
+            setItems(state => {
+              // Verifica se o produto já existe no carrinho
+              const produtoExistente = state.find(item => item.id === produto.id);
+              
+              if (produtoExistente) {
+                // Se o produto já existe, aumenta a quantidade
+                return state.map(item => 
+                  item.id === produto.id ? { ...item, quantidade: item.quantidade + 1 } : item
+                );
+              } else {
+                // Se o produto não existe, adiciona o novo produto ao carrinho
+                return [...state, { ...produto, quantidade: 1 }];
+              }
+            });
+          }
 
-        function removerProduto(produtoId: number) {
-    
-            const indice = items.findIndex(items => items.id === produtoId) 
-            let novoCart = [...items]  
-    
-            if(indice >= 0){
-                novoCart.splice(indice, 1)
-                setItems(novoCart) 
-            }
-        }
+          function removerProduto(produtoId: number) {
+            setItems(state => {
+              // Verifica se o produto existe no carrinho
+              const produtoExistente = state.find(item => item.id === produtoId);
+        
+              if (produtoExistente) {
+                // Se o produto existe, diminui a quantidade
+                return state
+                  .map(item =>
+                    item.id === produtoId
+                      ? { ...item, quantidade: item.quantidade - 1 }
+                      : item
+                  )
+                  .filter(item => item.quantidade > 0); // Remove o item se a quantidade for zero ou menor
+              } else {
+                // Se o produto não existir, retorna o estado atual sem modificações
+                return state;
+              }
+            });
+          }
     
         function limparCart() {
             toastAlerta("Compra Efetuada com Sucesso","sucesso")
