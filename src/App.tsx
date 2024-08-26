@@ -19,6 +19,7 @@ import Cart from "./Pages/cart/Cart";
 import Perfil from './Pages/Perfil/Perfil';
 import FormularioUsuario from "./Components/Perfil/formularioUsuario/formularioUsuario";
 import ProdutosPorCategoria from "./Components/Produto/ProdutoCategoria/ProdutoCategoria";
+import ModalUsuario from "./Components/Perfil/ModalUsuario/modalUsuario";
 
 
 function App() {
@@ -45,7 +46,7 @@ function App() {
             <Route path="/editarProduto/:id" element={<FormProduto />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/perfil" element={<Perfil />} />
-            <Route path="/editarPerfil/:id" element={<FormularioUsuario />} />
+            {/* <Route path="/editarPerfil/:id" element={<FormularioUsuario />} /> */}
             <Route path="/categorias/:id" element={<ProdutosPorCategoria />} />
           </Routes>
         </div>
