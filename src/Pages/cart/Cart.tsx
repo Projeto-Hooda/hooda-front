@@ -11,7 +11,10 @@ function Cart() {
 
     // Calcula o subtotal total
     const subtotal = calcularSubtotal();
-    
+
+    function formatarPreco(valor) {
+        return valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      }
 
     console.log(items)
     return (
@@ -36,21 +39,21 @@ function Cart() {
                             }
                         </div>
                     </div>
-                    <div className='container col-span-2  bg-white shadow-md rounded-lg p-6 mt-4 text-center font-Montserrat text-xl 
+                    <div className='container col-span-2  bg-white shadow-md rounded-lg p-6 mt-4 text-center font-sans font-semibold text-xl 
                     md:mt-0 md:ml-6 md:text-2xl md:h-[30vh] md:pb-4 lg:h-[35vh] lg:text-3xl xl:h-[55vh] xl:col-span-3 xl:text-2xl'>
                     <div className=' pb-2 md:pb-4'>Resumo do Pedido</div>
-                    <div className='flex justify-between  pt-2 font-Montserrat text-sm px-2 md:text-xl md:py-2 lg:text-2xl xl:text-xl '>
-                        <span>Subtotal: </span> <span> R$ {subtotal.toFixed(2)}</span>
+                    <div className='flex justify-between  pt-2 font-sans font-normal text-sm px-2 md:text-xl md:py-2 lg:text-2xl xl:text-xl '>
+                        <span>Subtotal: </span> <span> R$ {formatarPreco(subtotal)}</span>
                         
                     </div>
-                    <div className='flex justify-between pb-2 font-Montserrat text-sm px-2 md:text-xl md:pb-4 lg:text-2xl xl:text-xl'>
+                    <div className='flex justify-between pb-2 font-sans font-normal text-sm px-2 md:text-xl md:pb-4 lg:text-2xl xl:text-xl'>
                         <span>Frete: </span> <span>R$ 0,00</span>
                     </div>
-                    <div  className='flex justify-between pt-4 px-2 font-Montserrat border-t-2 border-slate-400 text-lg md:text-xl md:pt-4 lg:text-2xl xl:text-xl'>
-                    <span>Total: </span> <span> R$ {subtotal.toFixed(2)}</span> 
+                    <div  className='flex justify-between pt-4 px-2 font-sans font-semibold border-t-2 border-slate-400 text-lg md:text-xl md:pt-4 lg:text-2xl xl:text-xl'>
+                    <span>Total: </span> <span className=''> R$ {formatarPreco(subtotal)}</span> 
                     </div>
                     <div className='flex justify-center m-2 pt-6'>
-                        <button className="bg-hoodaLaranja hover:bg-amber-400 text-white font-bold py-1 px-2 rounded-full xl:text-xl"
+                        <button className="bg-slate-400 hover:bg-amber-400 text-white font-medium py-1 px-2 rounded-full xl:text-xl"
                             onClick={limparCart}>Finalizar Compra</button>
                     </div>
                     </div>
