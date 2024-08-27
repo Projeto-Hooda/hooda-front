@@ -23,7 +23,7 @@ function Home() {
         <Carrosel />
       </div>
       <div className="flex flex-col lg:flex-row lg:col-span-2 lg:justify-end">
-        <div className="m-2 w-[100vw] h-10 xl:hidden">
+        <div className="mt-2 p-1 w-[100vw] h-10 xl:hidden">
           <MenuCategoria />
         </div>
 
