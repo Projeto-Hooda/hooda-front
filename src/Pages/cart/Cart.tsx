@@ -19,9 +19,9 @@ function Cart() {
 
             <div className='flex flex-col md:mx-6'>
                 <div className='font-Montserrat text-hoodaLaranja text-xl pt-2 flex justify-center md:justify-start md:ml-1'>Carrinho de Compras</div>
-                <div className="container grid grid-cols-1 justify-between w-full my-4 md:grid-cols-6 md:flex ">
+                <div className="container grid grid-cols-1 justify-between w-full my-4 md:grid-cols-6 md:flex xl:grid xl:grid-cols-10">
 
-                    <div className="container col-span-3 bg-white shadow-md rounded-lg p-6">
+                    <div className="container col-span-3 bg-white shadow-md rounded-lg md:p-0 xl:col-span-7">
                         <div className='grid grid-cols-5 items-center font-Montserrat'>
                             {/* <div className='col-span-1 flex justify-center text-sm'>Produto</div>
                             <div className='col-span-1 flex justify-center text-sm'>Preço</div>
@@ -36,20 +36,21 @@ function Cart() {
                             }
                         </div>
                     </div>
-                    <div className='container col-span-2 bg-white shadow-md rounded-lg p-6 mt-4 text-center font-Montserrat text-xl md:mt-0 md:ml-6 md:text-2xl md:h-[50vh] md:pb-4 lg:h[50vh]'>
+                    <div className='container col-span-2  bg-white shadow-md rounded-lg p-6 mt-4 text-center font-Montserrat text-xl 
+                    md:mt-0 md:ml-6 md:text-2xl md:h-[30vh] md:pb-4 lg:h-[35vh] lg:text-3xl xl:h-[55vh] xl:col-span-3 xl:text-2xl'>
                     <div className=' pb-2 md:pb-4'>Resumo do Pedido</div>
-                    <div className='flex justify-between  pt-2 font-Montserrat text-sm px-2 md:text-xl md:py-2 '>
+                    <div className='flex justify-between  pt-2 font-Montserrat text-sm px-2 md:text-xl md:py-2 lg:text-2xl xl:text-xl '>
                         <span>Subtotal: </span> <span> R$ {subtotal.toFixed(2)}</span>
                         
                     </div>
-                    <div className='flex justify-between pb-2 font-Montserrat text-sm px-2 md:text-xl md:pb-4'>
+                    <div className='flex justify-between pb-2 font-Montserrat text-sm px-2 md:text-xl md:pb-4 lg:text-2xl xl:text-xl'>
                         <span>Frete: </span> <span>R$ 0,00</span>
                     </div>
-                    <div  className='flex justify-between pt-4 px-2 font-Montserrat border-t-2 border-slate-400 text-lg md:text-xl md:pt-4'>
+                    <div  className='flex justify-between pt-4 px-2 font-Montserrat border-t-2 border-slate-400 text-lg md:text-xl md:pt-4 lg:text-2xl xl:text-xl'>
                     <span>Total: </span> <span> R$ {subtotal.toFixed(2)}</span> 
                     </div>
                     <div className='flex justify-center m-2 pt-6'>
-                        <button className="bg-hoodaLaranja hover:bg-amber-400 text-white font-bold py-2 px-4 rounded-full"
+                        <button className="bg-hoodaLaranja hover:bg-amber-400 text-white font-bold py-1 px-2 rounded-full xl:text-xl"
                             onClick={limparCart}>Finalizar Compra</button>
                     </div>
                     </div>

@@ -73,43 +73,46 @@ function CardCarrinho({ item }: CardProdutosProps) {
 
   const total = item.quantidade * item.preco
   return (
-    <div className='bg-white shadow-md rounded-lg my-4 p-1 gap-4'>
-     
-        <div className="relative h-32 w-full md:h-48 md:w-full md:col-span-1 ">
-          <img src={item.imagem} className="h-full w-full object-cover rounded-md" alt={item.nome} />
-        </div>
+    <div className='bg-white shadow-md rounded-lg px-4 gap-4 md:mb-6 md:px-0 xl:grid xl:grid-flow-col xl: '>
 
-        <div className="ml-4 md:col-span-1">
-          <p className="text-base text-center p-2 text-amber-400 font-semibold md:text-2xl lg:text-2xl md:flex md:justify-center md:items-center">{item.nome}</p>
-        </div>
+      <div className="relative h-32 w-full md:h-36 md:w-full xl:h-30 xl:w-40">
+        <img src={item.imagem} className="h-full w-full object-cover rounded-md" alt={item.nome} />
+      </div>
 
-      <div className='flex justify-between p-1 md:col-span-1'>
-      <div className="flex items-center justify-start md:justify-center">
-        <p className="text-lg font-semibold text-gray-900 md:text-2xl">R$ {item.preco.toFixed(2)}</p>
+      <div className="ml-4 md:col-span-1 xl:ml-0 xl:items-center xl:flex">
+        <p className="text-base text-center p-2 text-amber-400 font-semibold md:text-xl lg:text-3xl md:flex md:justify-center 
+        md:items-center md:mb-2 lg:py-4 xl:text-xl xl:justify-start  xl:w-[30vh] xl:font-medium ">{item.nome}</p>
       </div>
-      <div className="flex items-center justify-center space-x-2">
+
+      <div className='flex justify-between p-1 md:col-span-1 xl:col-span-1  xl:p-0'>
+        <div className="flex items-center justify-center md:pl-2 xl:flex xl:justify-start xl:p-0">
+          <p className="text-lg font-medium text-gray-900 md:text-xl lg:text-3xl xl:text-xl xl:flex xl:justify-start  ">R$ {item.preco.toFixed(2)}</p>
+        </div>
+        <div className="flex items-center justify-center space-x-2  xl:w-[17vh]">
+          <button
+            className="bg-red-500 hover:bg-red-700 text-white rounded-full"
+            onClick={() => removerQuantidadeProduto(item.id)}
+            disabled={item.quantidade <= 1}
+          >
+            <MinusIcon className="h-4 w-4 md:h-5 md:w-5 lg:h-8 lg:w-8 xl:h-6 xl:w-6" />
+          </button>
+          <span className="text-lg font-medium md:text-xl lg:px-3 lg:text-3xl xl:text-xl xl:px-1  ">{item.quantidade}</span>
+          <button
+            className="bg-amber-400 hover:bg-amber-600 text-white rounded-full"
+            onClick={() => adicionarQuantidadeProduto(item.id)}
+          >
+            <PlusIcon className="h-4 w-4 md:h-5 md:w-5 lg:h-8 lg:w-8 xl:h-6 xl:w-6" />
+          </button>
+        </div>
+        <div className="flex items-center justify-center col-span-1">
+          <p className="text-lg  font-semibold text-gray-900 md:text-xl lg:text-3xl md:pr-2 xl:text-xl xl:pl-4 xl:w-[23vh]
+           ">R$ {total.toFixed(2)}</p>
+        </div>
+      </div>
+      <div className="col-span-1 flex items-center justify-center xl:p-0 ">
         <button
-          className="bg-red-500 hover:bg-red-700 text-white rounded-full"
-          onClick={() => removerQuantidadeProduto(item.id)}
-          disabled={item.quantidade <= 1}
-        >
-          <MinusIcon className="h-4 w-4 md:h-6 md:w-6" />
-        </button>
-        <span className="text-lg font-medium md:text-2xl">{item.quantidade}</span>
-        <button
-          className="bg-amber-400 hover:bg-amber-600 text-white rounded-full"
-          onClick={() => adicionarQuantidadeProduto(item.id)}
-        >
-          <PlusIcon className="h-4 w-4 md:h-6 md:w-6" />
-        </button>
-      </div>
-      <div className="flex items-center justify-center col-span-1">
-        <p className="text-lg font-medium text-gray-900 md:text-2xl">R$ {total.toFixed(2)}</p>
-      </div>
-      </div>
-      <div className="col-span-1 flex items-center justify-center">
-        <button
-          className="w-full bg-red-500 hover:bg-red-700 my-2 text-white font-bold rounded-full md:text-2xl"
+          className="w-full bg-red-500 hover:bg-red-700 m-2 mx-10 mb-5 text-white font-bold rounded-full md:mx-6 md:text-xl 
+          lg:text-2xl lg:mt-8 lg:py-2 xl:px-2 xl:text-lg xl:mr-1 xl:flex xl:justify-center xl:m-0"
           onClick={() => removerProduto(item.id)}
         >
           Remover
