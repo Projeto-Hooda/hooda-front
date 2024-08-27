@@ -22,21 +22,15 @@ function Home() {
       <div className="min-h-[0vh] max-h-[60vh] max-md:hidden pb-8 flex items-center col-span-12 p-0 m-0">
         <Carrosel />
       </div>
-      <div className="flex flex-col md:flex-row md:col-span-2 md:justify-end">
-        {/* <button
-          className="p-2 m-4 text-white bg-blue-500 rounded-lg md:hidden"
-          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-        >
-          {isSidebarOpen ? "Close Menu" : "Open Menu"}
-        </button> */}
-        <div className="m-2 w-[100vw] h-10">
+      <div className="flex flex-col lg:flex-row lg:col-span-2 lg:justify-end">
+        <div className="m-2 w-[100vw] h-10 xl:hidden">
           <MenuCategoria />
         </div>
 
         <aside
-          className={`max-lg:hidden md:flex-col m-4 w-[100vw] xl:w-[180px] md:h-[500px] rounded-md bg-amber-500 font-Montserrat text-white p-4 shadow-lg transition-transform md:translate-x-0 md:w-64`}
+          className={`max-lg:hidden md:flex-col m-4 w-[100vw] xl:w-[180px] md:h-[500px] rounded-md bg-amber-500 font-Montserrat text-white p-4 shadow-lg transition-transform lg:translate-x-0 lg:w-64`}
         >
-          <h2 className="text-base md:text-2xl border-b-2 flex justify-center font-semibold mb-4">
+          <h2 className="text-base max-lg:hidden xl:text-2xl border-b-2 flex justify-center font-semibold mb-4">
             Categorias
           </h2>
           <ul className="space-y-2 grid grid-cols-4 md:flex-col md:grid-cols-1">
@@ -56,7 +50,7 @@ function Home() {
       </div>
       <div className="md:col-span-9 flex justify-center">
         <div>
-          <div className="flex md:flex-row md:flex-wrap justify-evenly py-0 px-0">
+          <div className="flex lg:flex-row lg:flex-wrap justify-evenly py-0 px-0">
             <ListProduto />
           </div>
           <p className="font-Docker-One text-hoodaLaranja flex justify-center">
