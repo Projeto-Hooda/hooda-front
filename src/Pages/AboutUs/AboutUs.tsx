@@ -1,6 +1,7 @@
 import { GithubLogo, LinkedinLogo } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
 import './AboutUs.css'
+import balance from '../../assets/balance.png'
 
 function aboutUs() {
     return (
@@ -9,7 +10,7 @@ function aboutUs() {
                 <div className="grid grid-cols-1  mb-[5rem] md:grid-cols-2 items-center gap-8">
                     <div className="max-w-lg">
                         <h2 className="text-3xl font-Montserrat text-gray-900 sm:text-4xl">SOBRE NÓS</h2>
-                        <p className="mt-4 font-Montserrat xl:text-justify text-gray-600 text-lg">Olá, somos Hooda, um marketplace dedicado a oferecer produtos sustentáveis para consumidores conscientes. Nosso projeto nasceu em junho de 2024, com a missão de criar um ambiente onde sustentabilidade e consumo consciente caminham juntos. Desde o início, nosso foco tem sido conectar produtores e marcas que compartilham do compromisso de fabricar
+                        <p className="mt-4 font-sans font-medium xl:text-justify text-gray-600 text-lg ">Olá, somos Hooda, um marketplace dedicado a oferecer produtos sustentáveis para consumidores conscientes. Nosso projeto nasceu em junho de 2024. Desde o início, nosso foco tem sido conectar produtores e marcas que compartilham do compromisso de fabricar
                             produtos ecologicamente responsáveis e éticos.</p>
                         <p className="mt-4 font-Montserrat text-gray-600 text-lg"></p>
                         <p className="mt-4 font-Montserrat text-gray-600 text-lg"></p>
@@ -22,6 +23,87 @@ function aboutUs() {
                         <img src="https://i.imgur.com/uqAwc5T.jpeg" alt="" />
                     </div>
                 </div>
+
+                <section id="mission" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+                    <div className="container px-4 md:px-6">
+                        <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
+                            <div className="hover:scale-105 transition-transform duration-300 hidden md:block" >
+                                <img
+                                    src="https://www.kerry.com/content/dam/kerry/cdprod/media/global/pages/kerrydigest/sustainability-persona-hero.jpg"
+                                    width="550"
+                                    height="310"
+                                    alt="Missão"
+                                    className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full hidden md:block"
+                                />
+                            </div>
+                            <div className="space-y-4">
+                                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-Montserrat text-gray-900">Nossa Missão</h2>
+                                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed xl:text-justify font-sans font-medium text-gray-600 text-justify">
+                                    Nossa missão é criar um marketplace onde sustentabilidade e consumo consciente se encontram, promovendo produtos ecológicos e               éticos que apoiam o Trabalho Decente e o Crescimento Econômico, conforme o Objetivo de Desenvolvimento Sustentável 8 da ONU.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="values" className="w-full py-12 md:py-24 lg:py-32">
+                    <div className="container px-4 md:px-6">
+                        <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
+                            <div className="space-y-4">
+                                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-gray-900 font-Montserrat">Nossos Valores</h2>
+                                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-gray-600 font-sans text-justify">
+                                    Na Hooda, nossos valores orientam cada aspecto de nossa missão. <span className="font-semibold">Sustentabilidade</span> é essencial para nós, promovendo a proteção ambiental e práticas que minimizam o impacto ecológico. <span className="font-semibold">Ética</span> guia todas as nossas operações, assegurando parcerias com produtores que respeitam práticas justas e responsáveis. A <span className="font-semibold">Conexão</span> entre consumidores e produtores é vital, criando uma rede de apoio mútuo em prol de um desenvolvimento econômico justo. Finalmente, buscamos gerar <span className="font-semibold">Impacto Social</span> positivo, apoiando iniciativas que promovem crescimento sustentável e oportunidades econômicas equitativas. Esses princípios reforçam nosso compromisso com um mercado responsável e impactante.
+                                </p>
+                            </div>
+                            <div className="grid gap-6">
+                                <div className="flex items-start gap-4">
+                                    <div className="bg-primary rounded-md p-3 flex items-center justify-center">
+                                        <LeafIcon className="w-6 h-6 text-primary-foreground text-hoodaLaranja" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-semibold text-gray-900 font-sans ">Sustentabilidade </h3>
+                                        <p className="text-muted-foreground text-gray-600 font-sans font-normal">
+                                            Valorizamos a proteção ambiental e promovemos a escolha de produtos que respeitam o meio ambiente. Estamos comprometidos em apoiar práticas que reduzem o impacto ecológico e incentivam a preservação dos recursos naturais.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start gap-4">
+                                    <div className="bg-primary rounded-md p-3 flex items-center justify-center">
+                                        <HandshakeIcon className=" w-6 h-6 text-primary-foreground text-hoodaLaranja" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-semibold text-gray-900 font-sans ">Ética</h3>
+                                        <p className="text-muted-foreground text-gray-600 font-sans ">
+                                            Priorizamos a ética em todas as nossas operações. Trabalhamos apenas com produtores e marcas que adotam práticas de trabalho justas e responsáveis, garantindo que todos os envolvidos sejam tratados com dignidade e respeito
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start gap-4">
+                                    <div className="bg-primary rounded-md p-3 flex items-center justify-center">
+                                        <UsersIcon className="w-6 h-6 text-primary-foreground text-hoodaLaranja" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-semibold text-gray-900 font-sans ">Impacto Social</h3>
+                                        <p className="text-muted-foreground text-gray-600 font-sans ">
+                                            Apoiamos iniciativas que contribuem para o desenvolvimento econômico sustentável e o crescimento inclusivo. Nosso foco é gerar um impacto positivo na sociedade, apoiando o trabalho decente e promovendo oportunidades econômicas equitativas.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start gap-4">
+                                    <div className="bg-primary rounded-md p-3 flex items-center justify-center">
+                                        <LinkIcon className="w-6 h-6 text-primary-foreground text-hoodaLaranja" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-semibold text-gray-900 font-sans ">Conexão</h3>
+                                        <p className="text-muted-foreground text-gray-600 font-sans ">
+                                            Fomentamos a colaboração entre consumidores e produtores para criar uma rede de apoio mútuo. Nosso objetivo é fortalecer parcerias que compartilham o compromisso com a sustentabilidade e o desenvolvimento econômico justo.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 <h1 className="text-2xl font-Montserrat pb-8">Conheça nossa equipe: </h1>
                 <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 items-center gap-8">
                     <div>
@@ -179,41 +261,102 @@ function aboutUs() {
                         </div>
                     </div>
                 </div>
-                <div className="grid grid-cols-1 mb-[5rem] md:grid-cols-1 pt-32 items-center gap-8">
-                    <h1 className="text-2xl font-Montserrat flex justify-center ">Nos deixe um feedback: </h1>
-                    <form className="max-w-md mx-auto mt-16">
-                        <div className="relative z-0 w-full mb-5 group">
-                            <input type="email" name="floating_email" id="floating_email" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-hoodaLaranja focus:outline-none focus:ring-0 focus:border-hoodaLaranja peer" placeholder=" " required />
-                            <label htmlFor="floating_email" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-hoodaLaranja peer-focus:dark:text-hoodaLaranja peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email</label>
-                        </div>
-                        <div className="grid md:grid-cols-2 md:gap-6">
-                            <div className="relative z-0 w-full mb-5 group">
-                                <input type="text" name="floating_first_name" id="floating_first_name" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-hoodaLaranja focus:outline-none focus:ring-0 focus:border-hoodaLaranja peer" placeholder=" " required />
-                                <label htmlFor="floating_first_name" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-hoodaLaranja peer-focus:dark:text-hoodaLaranja peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Primeiro Nome</label>
-                            </div>
-                            <div className="relative z-0 w-full mb-5 group">
-                                <input type="text" name="floating_last_name" id="floating_last_name" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-hoodaLaranja focus:outline-none focus:ring-0 focus:border-hoodaLaranja peer" placeholder=" " required />
-                                <label htmlFor="floating_last_name" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-hoodaLaranja peer-focus:dark:text-hoodaLaranja peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Sobrenome</label>
-                            </div>
-                        </div>
-                        <div className="mb-5">
-                            <label htmlFor="feedback" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Digite seu Feedback</label>
 
-                            <div className="flex justify-center">
-                                <textarea id="feedback" className="feedback-textarea w-full max-w-md text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 p-4" placeholder=" "></textarea>
-                            </div>
-                        </div>
-                        <div className="flex justify-center mt-8">
-                            <button type="submit" className="text-white bg-amber-400 hover:bg-amber-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg w-full max-w-xs px-6 py-3 text-center dark:bg-hoodaLaranja dark:hover:bg-amber-500 dark:focus:ring-hoodaLaranja">
-                                Enviar
-                            </button>
-                        </div>
-                    </form>
-                </div>
             </div>
         </section >
     )
 }
+
+function HandshakeIcon(props) {
+    return (
+        <svg
+            {...props}
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        >
+            <path d="m11 17 2 2a1 1 0 1 0 3-3" />
+            <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
+            <path d="m21 3 1 11h-2" />
+            <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" />
+            <path d="M3 4h8" />
+        </svg>
+    )
+}
+
+
+function LeafIcon(props) {
+    return (
+        <svg
+            {...props}
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        >
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+        </svg>
+    )
+}
+
+
+function LinkIcon(props) {
+    return (
+        <svg
+            {...props}
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        >
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+        </svg>
+    )
+}
+
+
+function UsersIcon(props) {
+    return (
+        <svg
+            {...props}
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        >
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+        </svg>
+    )
+}
+
+
+
 
 export default aboutUs
 
