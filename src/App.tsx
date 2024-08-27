@@ -19,6 +19,7 @@ import Cart from "./Pages/cart/Cart";
 import Perfil from './Pages/Perfil/Perfil';
 import FormularioUsuario from "./Components/Perfil/formularioUsuario/formularioUsuario";
 import ProdutosPorCategoria from "./Components/Produto/ProdutoCategoria/ProdutoCategoria";
+import Contact from "./Pages/Contact/Contact";
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
             <Route path="/perfil" element={<Perfil />} />
             <Route path="/editarPerfil/:id" element={<FormularioUsuario />} />
             <Route path="/categorias/:id" element={<ProdutosPorCategoria />} />
+            <Route path="/contato" element={<Contact />} />
           </Routes>
         </div>
         <Footer />
