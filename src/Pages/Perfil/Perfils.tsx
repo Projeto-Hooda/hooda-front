@@ -50,7 +50,7 @@ function Perfils() {
     }
 
     return (
-        <div className="bg-background text-foreground p-6 md:p-8 lg:p-10 rounded-lg shadow-lg border-2 border-red-500 md:w-full">
+        <div className="bg-background text-foreground p-6 md:p-8 lg:p-10 rounded-lg shadow-lg md:w-full">
             <div className="grid md:grid-cols-2 gap-6">
                 <div className="grid gap-4">
                     <div className="grid md:flex items-center gap-4">
