@@ -36,8 +36,6 @@ function Menu() {
               {token === '' ? <Link to='/login'><button>Entrar</button></Link> : <button onClick={handleLogout}>Sair</button>}
             </button>
             <span className="sr-only">Open main menu
-
-
             </span>
             <div>
               <Link to={"/cart"}>
