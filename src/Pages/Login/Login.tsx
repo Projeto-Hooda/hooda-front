@@ -39,9 +39,9 @@ function Login() {
           <img src="https://i.imgur.com/bLUnK48.png" alt="Hooda Logo" className="w-16 h-auto" />
         </div>
 
-        <h3 className="text-3xl font-bold text-orange-500 mb-4 text-center mt-12">Login</h3>
+        <h3 className="text-3xl font-bold text-hoodaLaranja mb-4 text-center mt-12">Login</h3>
         <p className="text-sm text-gray-600 mb-6 text-center">
-          Não tem conta? <Link to="/register" className="text-orange-500 hover:underline font-semibold">Cadastre-se</Link>
+          Não tem conta? <Link to="/register" className="text-hoodaLaranja hover:underline font-semibold">Cadastre-se</Link>
         </p>
         <form onSubmit={login}>
           <div className="mb-4">
@@ -51,7 +51,7 @@ function Login() {
               value={usuarioLogin.usuario} 
               type="text" 
               required 
-              className="w-full text-gray-800 text-sm border rounded-md border-gray-300 focus:border-orange-500 px-3 py-2 outline-none" 
+              className="w-full text-gray-800 text-sm border rounded-md border-gray-300 focus:border-amber-400 px-3 py-2 outline-none" 
               placeholder="Seu email"
               onChange={atualizarEstado} 
             />
@@ -63,21 +63,21 @@ function Login() {
               value={usuarioLogin.senha} 
               type="password" 
               required 
-              className="w-full text-gray-800 text-sm border rounded-md border-gray-300 focus:border-orange-500 px-3 py-2 outline-none" 
+              className="w-full text-gray-800 text-sm border rounded-md border-gray-300 focus:border-amber-400 px-3 py-2 outline-none" 
               placeholder="Sua senha"
               onChange={atualizarEstado} 
             />
           </div>
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center">
-              <input id="remember-me" name="remember-me" type="checkbox" className="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded" />
+              <input id="remember-me" name="remember-me" type="checkbox" className="h-4 w-4 text-hoodaLaranja focus:ring-amber-400 border-gray-300 rounded" />
               <label htmlFor="remember-me" className="ml-2 text-sm text-gray-800">Lembrar de mim</label>
             </div>
-            <Link to="/forgot-password" className="text-orange-500 hover:underline text-sm">Esqueceu sua senha?</Link>
+            <Link to="/forgot-password" className="text-hoodaLaranja hover:underline text-sm">Esqueceu sua senha?</Link>
           </div>
           <button 
             type="submit" 
-            className="w-full bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-orange-600 focus:outline-none flex items-center justify-center"
+            className="w-full bg-hoodaLaranja text-white py-2 px-4 rounded-md hover:bg-amber-400 focus:outline-none flex items-center justify-center"
           >
             {isLoading ? (
               <RotatingLines

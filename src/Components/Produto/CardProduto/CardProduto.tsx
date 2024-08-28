@@ -66,11 +66,9 @@ function CardProduto({ produto }: CardProdutoProps) {
     </>
   );
 
-
   return (
     <>
       <div className="w-[12rem] md:w-[11rem] lg:w-[16rem] bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden m-2 mx-[2rem]">
-
         <div className="relative h-40">
           <img
             src={produto.imagem}
@@ -109,7 +107,6 @@ function CardProduto({ produto }: CardProdutoProps) {
         </div>
       </div>
     </>
-
   );
 }
 
