@@ -56,7 +56,7 @@ function ProdutosPorCategoria() {
                                     <img src={item.imagem} className="h-full w-full object-cover" alt="" />
                                 </div>
                                 <div className='p-4'>
-                                    <div className="mb-2 flex items-center justify-between text-xl">
+                                     <div className="mb-2 flex items-center justify-between text-xl">
                                         <h2 className='text-hoodaLaranja font-medium'>{item.nome}</h2>
                                     </div>
                                     <div className="mb-2 flex items-center justify-between text-md">
