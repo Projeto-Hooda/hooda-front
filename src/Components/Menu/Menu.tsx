@@ -381,6 +381,19 @@ function Menu() {
                         Perfil
                       </Link>
                     </li>
+                    <li>
+                  <Link
+                    to={"/contato"}
+                    onClick={closeMenu}
+                    className="py-2 px-3 font-Montserrat text-gray-700 hover:text-white flex items-center"
+                  >
+                    <FontAwesomeIcon
+                      icon={faInfoCircle}
+                      className="h-6 w-6 mr-2"
+                    />
+                    Contato
+                  </Link>
+                </li>
                   </>
                 )}
               </ul>
