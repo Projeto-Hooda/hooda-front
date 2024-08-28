@@ -76,12 +76,12 @@ const FormularioUsuario: React.FC<FormularioUsuarioProps> = ({ userId, closeModa
   }, [token, navigate]);
 
   return (
-    <div className="container w-[100vh] h-full flex flex-col items-center justify-center mx-auto bg-white border rounded-lg">
+    <div className=" w-[40vh] lg:w-[50vh] xl:w-full flex flex-col justify-start md:items-center mx-auto border bg-white rounded-lg">
       <h1 className="text-4xl text-center my-8 font-Montserrat">
         Editar Perfil
       </h1>
 
-      <form className="w-[80vh] flex flex-col gap-4 bg-white" onSubmit={gerarNovoUsuario}>
+      <form className="w-[35vh] md:items-center lg:w-[50vh] xl:w-full flex flex-col gap-4 " onSubmit={gerarNovoUsuario}>
         <div className="flex flex-col gap-2">
           <label htmlFor="nome">Nome</label>
           <input
@@ -129,7 +129,7 @@ const FormularioUsuario: React.FC<FormularioUsuarioProps> = ({ userId, closeModa
 
         <div className='flex justify-evenly p-2 mb-3'>
           <button
-            className="rounded text-slate-100 bg-hoodaLaranja hover:bg-amber-400 w-1/2 py-2 mx-1 block"
+            className="rounded text-slate-100 bg-hoodaLaranja hover:bg-amber-400 w-[15vh] py-2 mx-1 block"
             type="submit"
           >
             Salvar Alterações
