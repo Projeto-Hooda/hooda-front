@@ -11,4 +11,5 @@ export default interface Produto {
     preco: number; 
     categoria: Categoria | null;
     usuario: Usuario | null;
+    quantidade: number;
 }

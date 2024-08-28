@@ -14,7 +14,8 @@ interface AuthContextProps {
     removerProduto: (produtoId: number) => void
     limparCart: () => void
     items: Produto[]
-    quantidadeItems: number   
+    adicionarQuantidadeProduto: (produtoId: number) => void
+    removerQuantidadeProduto: (produtoId: number) => void
 }
 interface AuthProviderProps {
     children: ReactNode
@@ -67,32 +68,78 @@ export function AuthProvider({ children }: AuthProviderProps) {
         }));
     }
 
-        const [items, setItems] = useState<Produto[]>([])
-    
-        const quantidadeItems = items.length
-    
-        function adicionarProduto(produto: Produto) {
-            setItems(state => [...state, produto])
-        }
+    const [items, setItems] = useState<Produto[]>([]);
 
-        function removerProduto(produtoId: number) {
+    function adicionarProduto(produto: Produto) {
+      setItems(state => {
+        // Verifica se o produto já existe no carrinho
+        const produtoExistente = state.find(item => item.id === produto.id);
     
-            const indice = items.findIndex(items => items.id === produtoId) 
-            let novoCart = [...items]  
-    
-            if(indice >= 0){
-                novoCart.splice(indice, 1)
-                setItems(novoCart) 
-            }
+        if (produtoExistente) {
+          // Se o produto já existe, apenas aumenta a quantidade
+          return state.map(item => 
+            item.id === produto.id ? { ...item, quantidade: item.quantidade + 1 } : item
+          );
+        } else {
+          // Se o produto não existe, adiciona o novo produto ao carrinho
+          return [...state, { ...produto, quantidade: 1 }];
         }
+      });
+    }
     
-        function limparCart() {
-            toastAlerta("Compra Efetuada com Sucesso","sucesso")
-            setItems([])
-        }    
+    function adicionarQuantidadeProduto(produtoId: number) {
+      setItems(state => {
+        // Verifica se o produto existe no carrinho
+        const produtoExistente = state.find(item => item.id === produtoId);
+    
+        if (produtoExistente) {
+          // Se o produto existe, aumenta a quantidade
+          return state.map(item =>
+            item.id === produtoId
+              ? { ...item, quantidade: item.quantidade + 1 }
+              : item
+          );
+        } else {
+          // Se o produto não existir, retorna o estado atual sem modificações
+          return state;
+        }
+      });
+    }
+    
+    function removerQuantidadeProduto(produtoId: number) {
+      setItems(state => {
+        // Verifica se o produto existe no carrinho
+        const produtoExistente = state.find(item => item.id === produtoId);
+    
+        if (produtoExistente) {
+          // Se o produto existe, diminui a quantidade
+          return state
+            .map(item =>
+              item.id === produtoId
+                ? { ...item, quantidade: item.quantidade - 1 }
+                : item
+            )
+            .filter(item => item.quantidade > 0); // Remove o item se a quantidade for zero ou menor
+        } else {
+          // Se o produto não existir, retorna o estado atual sem modificações
+          return state;
+        }
+      });
+    }
+    
+    function removerProduto(produtoId: number) {
+      setItems(state => 
+        state.filter(item => item.id !== produtoId) // Remove o produto do carrinho
+      );
+    }
+    
+    function limparCart() {
+      toastAlerta("Compra Efetuada com Sucesso", "sucesso");
+      setItems([]);
+    }   
 
     return (    // Adicionar as propriedades ao Provider já existente
-        <AuthContext.Provider value={{ usuario, handleLogin, handleLogout, isLoading, adicionarProduto, removerProduto, updateUsuarioContext, limparCart, items, quantidadeItems }}>
+        <AuthContext.Provider value={{ usuario, handleLogin, handleLogout, isLoading, adicionarProduto, removerProduto, updateUsuarioContext, limparCart, items, adicionarQuantidadeProduto,removerQuantidadeProduto }}>
             {children}
         </AuthContext.Provider>
     )

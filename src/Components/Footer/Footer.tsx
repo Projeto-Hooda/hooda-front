@@ -4,35 +4,27 @@ function Footer() {
   return (
     <>
       <footer className="bg-[#342E09] mt-10">
-        <div className="container px-4 mx-auto flex justify-center">
-          <div className="pt-[2rem] pb-[2rem] mx-auto max-w-4xl">
+        <div className="container px-4 mx-auto items-center">
+          <div className="pt-[1rem] pb-[1rem] mx-auto max-w-4xl flex justify-center">
             <img
               src="https://i.imgur.com/XlH3SL3.png"
               alt="Logo"
-              className="h-[6rem] block md:mx-auto"
+              className="h-[6rem] md:mx-auto"
             />
+            </div>
+            <div className="flex justify-center items-center pb-4">
+              <div className="px-2 md:w-auto p-0 md:px-6">
+                <Link  to="/home" className="text-lg text-amber-400 hover:text-white hover:text-xl duration-200 font-medium">Home</Link>
+              </div>
+              <div className="px-2 md:w-auto p-0 md:px-6">
+                <Link to="/aboutus" className="text-lg text-amber-400 hover:text-white hover:text-xl duration-200 font-medium">Sobre</Link>
 
-            <div className="flex grid-cols-1  md:grid-cols-3 lg:grid-cols-5 -mx-3 lg:-mx-6">
-              <div className="w-full md:w-auto p-3 md:px-6">
-                
-                  <Link className="text-lg text-amber-400 hover:text-white hover:text-xl duration-200 font-medium" to="/home">Home</Link>
               </div>
-              <div className="w-full md:w-auto p-3 md:px-6">
-                  <Link className="text-lg text-amber-400 hover:text-white hover:text-xl duration-200 font-medium" to="/aboutus">Sobre</Link>
-                
-              </div>
-              <div className="w-full md:w-auto p-3 md:px-6">
-                  <Link to={'#'} className="text-lg text-amber-400 hover:text-white hover:text-xl duration-200 font-medium" >Projeto</Link>
-              </div>
-              <div className="w-full md:w-auto p-3 md:px-6">
-                 <Link to={'#'} className="text-lg text-amber-400 hover:text-white hover:text-xl duration-200 font-medium"> Home</Link>
-                
-              </div>
-              <div className="w-full md:w-auto p-3 md:px-6">
-                 <Link to={'#'} className="text-lg text-amber-400 hover:text-white hover:text-xl duration-200 font-medium"> Home</Link>
+              <div className="px-2 md:w-auto p-0 md:px-6">
+                <Link to={'/https://tome.app/hooda-a37/hooda-cm05wjobe01swkgckcy5ataen'} className="text-lg text-amber-400 hover:text-white hover:text-xl duration-200 font-medium">Projeto</Link>
               </div>
             </div>
-          </div>
+          
         </div>
         <div className="border-b border-gray-100"></div>
         <div className="container px-4 mx-auto">
