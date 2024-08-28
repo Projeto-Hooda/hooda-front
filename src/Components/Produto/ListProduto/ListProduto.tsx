@@ -35,9 +35,11 @@ function ListProduto() {
 
   return (
     <>
+    <div className='flex justify-center p-2'>
       {produtos.length === 0 && (
         <ColorRing visible={true} colors={["#FEAE04","#FEAE04","#FEAE04","#FEAE04","#FEAE04"]} />
       )}
+      </div>
       <div className="container mx-auto my-4 grid grid-cols-1 md:pt-10 md:grid-cols-3 xl:grid-cols-4 gap-[.5rem] ">
         {produtos.map((produto) => (
           <CardProduto key={produto.id} produto={produto} />
