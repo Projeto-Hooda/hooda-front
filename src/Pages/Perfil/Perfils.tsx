@@ -64,22 +64,22 @@ function Perfils() {
                                 style={{ aspectRatio: "200/200", objectFit: "cover" }}
                             />
                         </div>
-                        <div className="grid md:gap-1">
+                        <div className="grid md:gap-1 ">
                             <h2 className="flex justify-center text-xl font-bold font-sans xl:text-xl">{usuario.nome}</h2>
                             <div className="flex justify-center items-center gap-0 md:gap-2 text-sm text-muted-foreground font-sans xl:text-xl">
                                 {usuario.usuario}
                             </div>
-                            <div className='flex mt-4 justify-center'>
+                            <div className='flex mt-4 justify-start items-start '>
                                 <Popup className=''
                                     trigger={<button
-                                        className="mt-3 w-1/2 md:w-full bg-hoodaLaranja text-white py-2 px-4 rounded-lg shadow hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-blue-500 ">
+                                        className="mt-3 w-[50vh] md:w-full xl:w-full bg-hoodaLaranja text-white py-2 px-4 rounded-lg shadow hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-blue-500 ">
                                         Editar Perfil
                                     </button>}
                                     modal
                                     closeOnDocumentClick
                                 >
 
-                                    <div className='w-full h-full'>
+                                    <div className=' flex xl:w-full md:justify-center'>
                                         <FormularioUsuario userId={usuario.id} closeModal={close} />
                                     </div>
 

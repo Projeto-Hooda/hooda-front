@@ -52,28 +52,7 @@ function Home() {
           <div className="flex lg:flex-row lg:flex-wrap justify-evenly py-0 px-0">
             <ListProduto />
           </div>
-          <p className="font-Docker-One text-hoodaLaranja flex justify-center">
-            Paginas
-          </p>
-
-          <ul className="flex justify-center">
-            <li className=" hover:text-hoodaLaranja hover:underline p-1">
-              {" "}
-              1{" "}
-            </li>
-            <li className=" hover:text-hoodaLaranja hover:underline p-1">
-              {" "}
-              2{" "}
-            </li>
-            <li className=" hover:text-hoodaLaranja hover:underline p-1">
-              {" "}
-              3{" "}
-            </li>
-            <li className=" hover:text-hoodaLaranja hover:underline p-1">
-              {" "}
-              4{" "}
-            </li>
-          </ul>
+          
         </div>
       </div>
     </div>
