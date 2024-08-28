@@ -2,6 +2,8 @@ import { useContext, useState } from "react";
 import "./Menu.css";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 function Menu() {
   const { usuario, handleLogout, adicionarProduto, removerProduto } = useContext(AuthContext);
@@ -11,8 +13,8 @@ function Menu() {
 
   const toggleDropdown = () => setIsOpen(!isOpen);
   const [notifications, setNotifications] = useState<number>(0);
-  
-  if(adicionarProduto){
+
+  if (adicionarProduto) {
 
   }
 
@@ -41,7 +43,7 @@ function Menu() {
               <Link to={"/cart"}>
                 <div className="relative inline-block">
                   <img src="https://i.imgur.com/pTCHwra.png" className="h-4 mr- sm:h-6 m-3" alt="Logo Carrinho" />
-                  
+
 
                   {notifications > 0 && (
                     <span className="absolute top-4 right-[-0.5rem] -translate-x-1/2 -translate-y-1/2 bg-white text-hoodaLaranja text-xs rounded-full w-5 h-5 flex items-center justify-center">
@@ -98,6 +100,12 @@ function Menu() {
                 <Link to={"/contato"} className="py-2 pl-3 pr-4 rounded lg:bg-transparent font-Montserrat text-gray-700 hover:text-white flex" aria-current="page">
                   <img className="w-[1.2rem] mr-2" src="https://i.imgur.com/Fqm5PLY.png" alt="Produto Icon" />
                   Contato
+                </Link>
+              </li>
+              <li>
+                <Link to="/perfils" className="py-2 px-3 font-Montserrat text-gray-700 hover:text-white flex items-center">
+                  <FontAwesomeIcon icon={faUser} className="h-4 w-4 mr-2" />
+                  Perfil
                 </Link>
               </li>
             </ul>

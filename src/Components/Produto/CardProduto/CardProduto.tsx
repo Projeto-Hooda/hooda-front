@@ -66,9 +66,9 @@ function CardProduto({ produto }: CardProdutoProps) {
     </>
   );
 
-  if (usuario.token === "" || usuario.id !== produto.usuario?.id) {
-    opcoes = (
-      <>
+  return (
+    <>
+      <div className="w-[12rem] md:w-[11rem] lg:w-[16rem] bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden m-2 mx-[2rem]">
         <div className="relative h-40">
           <img
             src={produto.imagem}
@@ -105,16 +105,8 @@ function CardProduto({ produto }: CardProdutoProps) {
             Adicionar ao Carrinho
           </button>
         </div>
-      </>
-    );
-  }
-
-  return (
-    <div className="w-[18rem] md:w-[12rem] lg:w-[15rem] xl:w-[17rem] bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden m-2 mx-[2rem]">
-      {usuario.token !== "" && usuario.id === produto.usuario?.id
-        ? opcoesUsuario
-        : opcoes}
-    </div>
+      </div>
+    </>
   );
 }
 
