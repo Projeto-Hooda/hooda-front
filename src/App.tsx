@@ -20,7 +20,7 @@ import Perfil from './Pages/Perfil/Perfil';
 import FormularioUsuario from "./Components/Perfil/formularioUsuario/formularioUsuario";
 import ProdutosPorCategoria from "./Components/Produto/ProdutoCategoria/ProdutoCategoria";
 import ModalUsuario from "./Components/Perfil/ModalUsuario/modalUsuario";
-import Perfils from "./Pages/Perfil/perfils";
+import Perfils from "./Pages/Perfil/Perfils";
 import Contact from "./Pages/Contact/Contact";
 
 

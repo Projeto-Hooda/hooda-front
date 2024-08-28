@@ -37,7 +37,6 @@ function Home() {
             {categorias.map((categoria) => (
               <li
                 key={categoria.id}
-                categoria={categoria}
                 className="p-2 rounded-lg hover:bg-gray-600 text-xs text-center md:text-base md:text-start"
               >
                 <Link to={`/categorias/${categoria.id}`} className="block">
