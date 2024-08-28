@@ -76,7 +76,7 @@ const FormularioUsuario: React.FC<FormularioUsuarioProps> = ({ userId, closeModa
   }, [token, navigate]);
 
   return (
-    <div className=" w-[40vh] lg:w-[50vh] xl:w-full flex flex-col justify-start md:items-center mx-auto border bg-white rounded-lg">
+    <div className=" w-[40rem] lg:w-[50rem] xl:w-full flex flex-col justify-start md:items-center mx-auto border bg-white rounded-lg">
       <h1 className="text-4xl text-center my-8 font-Montserrat">
         Editar Perfil
       </h1>

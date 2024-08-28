@@ -79,7 +79,7 @@ function Perfils() {
                                     closeOnDocumentClick
                                 >
 
-                                    <div className='w-[40vh] xl:w-full bg-white justify-start md:justify-center'>
+                                    <div className=' flex xl:w-full md:justify-center'>
                                         <FormularioUsuario userId={usuario.id} closeModal={close} />
                                     </div>
 
