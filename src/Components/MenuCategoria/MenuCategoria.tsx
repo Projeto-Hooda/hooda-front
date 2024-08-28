@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Pagination, Navigation } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Categoria from "../../model/Categoria";
 import { buscar } from "../../services/Service";
 import { Link } from "react-router-dom";
-import './styles.css';
+import "./styles.css";
 
 function MenuCategoria() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
@@ -19,15 +19,10 @@ function MenuCategoria() {
     <Swiper
       slidesPerView={4}
       spaceBetween={10}
-      autoplay={{
-        delay: 500,
-        disableOnInteraction: false,
-    }}
       pagination={{
-        type: 'fraction',
+        type: "fraction",
       }}
-      navigation={true}
-      modules={[Navigation,]}
+      modules={[Navigation]}
       className="mySwiper"
     >
       {categorias.map((categoria) => (
