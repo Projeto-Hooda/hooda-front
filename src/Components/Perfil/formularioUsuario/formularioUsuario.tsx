@@ -57,7 +57,7 @@ const FormularioUsuario: React.FC<FormularioUsuarioProps> = ({ userId, closeModa
 
       toastAlerta('Usuário atualizado com sucesso', 'sucesso');
       closeModal(); // Fecha o modal após o sucesso
-      navigate('/perfil');
+      navigate('/perfils');
     } catch (error: any) {
       if (error.toString().includes('403')) {
         toastAlerta('O token expirou, favor logar novamente', 'info');
@@ -134,13 +134,13 @@ const FormularioUsuario: React.FC<FormularioUsuarioProps> = ({ userId, closeModa
           >
             Salvar Alterações
           </button>
-          <button
+          {/* <button
             className="rounded text-slate-100 bg-red-500 hover:bg-red-400 w-1/2 py-2 mx-1 block"
             type="button"
             onClick={closeModal}
           >
             Cancelar
-          </button>
+          </button> */}
         </div>
       </form>
     </div>

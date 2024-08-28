@@ -20,6 +20,7 @@ import Perfil from './Pages/Perfil/Perfil';
 import FormularioUsuario from "./Components/Perfil/formularioUsuario/formularioUsuario";
 import ProdutosPorCategoria from "./Components/Produto/ProdutoCategoria/ProdutoCategoria";
 import ModalUsuario from "./Components/Perfil/ModalUsuario/modalUsuario";
+import Perfils from "./Pages/Perfil/perfils";
 
 
 function App() {
@@ -48,6 +49,8 @@ function App() {
             <Route path="/perfil" element={<Perfil />} />
             {/* <Route path="/editarPerfil/:id" element={<FormularioUsuario />} /> */}
             <Route path="/categorias/:id" element={<ProdutosPorCategoria />} />
+
+            <Route path="/perfils" element={<Perfils />} />
           </Routes>
         </div>
         <Footer />

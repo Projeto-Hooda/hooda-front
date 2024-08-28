@@ -99,7 +99,7 @@ function Menu() {
                       )}
                     </li>
                     <li>
-                      <Link to="/perfil" className="py-2 px-3 font-Montserrat text-gray-700 hover:text-white flex items-center">
+                      <Link to="/perfils" className="py-2 px-3 font-Montserrat text-gray-700 hover:text-white flex items-center">
                         <FontAwesomeIcon icon={faUser} className="h-6 w-6 mr-2" />
                         Perfil
                       </Link>
