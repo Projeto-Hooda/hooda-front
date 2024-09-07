@@ -2,16 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@layer base{
 @font-face {
   font-family: "Docker-One";
   src: url('./src/fonts/Docker-One/Docker One.ttf') format("opentype");
   font-style: normal;
   font-display: swap;
 }
+}
 
+@layer base{
 @font-face {
   font-family: "Montserrat";
   src: url('./src/fonts/Montserrat/Montserrat.ttf') format("truetype");
   font-style: normal;
   font-display: swap;
+}
 }

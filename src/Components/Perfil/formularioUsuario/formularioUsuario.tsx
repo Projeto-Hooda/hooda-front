@@ -76,13 +76,13 @@ const FormularioUsuario: React.FC<FormularioUsuarioProps> = ({ userId, closeModa
   }, [token, navigate]);
 
   return (
-    <div className=" w-[40rem] lg:w-[50rem] xl:w-full flex flex-col justify-start md:items-center mx-auto border bg-white rounded-lg">
+    <div className="w-full flex flex-col justify-start md:items-center mx-auto border rounded-lg">
       <h1 className="text-4xl text-center my-8 font-Montserrat">
         Editar Perfil
       </h1>
 
-      <form className="w-[35vh] md:items-center lg:w-[50vh] xl:w-full flex flex-col gap-4 " onSubmit={gerarNovoUsuario}>
-        <div className="flex flex-col gap-2">
+      <form className="w-[99%]" onSubmit={gerarNovoUsuario}>
+        <div className="flex flex-col  ">
           <label htmlFor="nome">Nome</label>
           <input
             type="text"
@@ -93,7 +93,7 @@ const FormularioUsuario: React.FC<FormularioUsuarioProps> = ({ userId, closeModa
             onChange={atualizarEstado}
           />
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col pt-3">
           <label htmlFor="usuario">E-mail de Usuário</label>
           <input
             type="text"
@@ -104,7 +104,7 @@ const FormularioUsuario: React.FC<FormularioUsuarioProps> = ({ userId, closeModa
             readOnly
           />
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col pt-3">
           <label htmlFor="senha">Senha</label>
           <input
             type="password"
@@ -115,7 +115,7 @@ const FormularioUsuario: React.FC<FormularioUsuarioProps> = ({ userId, closeModa
             onChange={atualizarEstado}
           />
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col pt-3">
           <label htmlFor="foto">Foto URL (opcional)</label>
           <input
             type="text"
@@ -129,7 +129,7 @@ const FormularioUsuario: React.FC<FormularioUsuarioProps> = ({ userId, closeModa
 
         <div className='flex justify-evenly p-2 mb-3'>
           <button
-            className="rounded text-slate-100 bg-hoodaLaranja hover:bg-amber-400 w-[15vh] py-2 mx-1 block"
+            className="rounded text-sm mt-4 text-slate-100 bg-hoodaLaranja hover:bg-amber-400 w-[15vh] py-2 mx-1 block"
             type="submit"
           >
             Salvar Alterações

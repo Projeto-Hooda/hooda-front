@@ -50,10 +50,10 @@ function Perfils() {
     }
 
     return (
-        <div className="bg-background text-foreground p-6 md:p-8 lg:p-10 rounded-lg shadow-lg md:w-full">
-            <div className="grid md:grid-cols-2 gap-6">
-                <div className="grid gap-4">
-                    <div className="grid md:flex items-center gap-4">
+        <div className="bg-background text-foreground p-6 md:p-8 lg:p-10 rounded-lg shadow-lg md:w-full ">
+            <div className="grid md:grid-cols-2 gap-6 ">
+                <div className="grid gap-4 ">
+                    <div className="grid md:flex items-center gap-4 ">
                         <div className="md:block">
                             <img
                                 src={usuario.foto}
@@ -69,17 +69,17 @@ function Perfils() {
                             <div className="flex justify-center items-center gap-0 md:gap-2 text-sm text-muted-foreground font-sans xl:text-xl">
                                 {usuario.usuario}
                             </div>
-                            <div className='flex mt-4 justify-start items-start '>
-                                <Popup className=''
+                            <div className='flex mt-4 justify-center items-start'>
+                                <Popup className='w-full max-w-md p-0 '
                                     trigger={<button
-                                        className="mt-3 w-[50vh] md:w-full xl:w-full bg-hoodaLaranja text-white py-2 px-4 rounded-lg shadow hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-blue-500 ">
+                                        className="mt-3 w-[40vh] md:w-full xl:w-full bg-hoodaLaranja text-white py-2 px-4 rounded-lg shadow hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-blue-500 ">
                                         Editar Perfil
                                     </button>}
                                     modal
                                     closeOnDocumentClick
                                 >
 
-                                    <div className=' flex xl:w-full md:justify-center'>
+                                    <div className='w-full p-1 md:p-6 mx-auto max-w-md  rounded-lg shadow-lg'>
                                         <FormularioUsuario userId={usuario.id} closeModal={close} />
                                     </div>
 
